@@ -108,4 +108,5 @@
   .gridi, .gridiTatu { grid-template-columns: 1fr; }
   .kisanduku { padding: 0 1rem 4rem; }
   .nav { padding: 1rem; }
+  .ingizo { font-size: 16px; }
 }
