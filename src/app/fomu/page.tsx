@@ -7,6 +7,14 @@ import type { WosiaData, Mrithi, KipachiArdhi, KipachiBenki, KipachiGari } from 
 
 const MAJINA_HATUA = ['Mwandishi', 'Mali', 'Wateule', 'Msimamizi', 'Matakwa', 'Kagua']
 
+const F = ({ label, req, error, children }: { label: string, req?: boolean, error?: boolean, children: React.ReactNode }) => (
+  <div className={`${styles.uga} ${error ? styles.ugaKosa : ''}`}>
+    <label className={styles.lebo}>{label}{req && <span className={styles.lazima}> *</span>}</label>
+    {children}
+    {error && <span className={styles.ujumbeKosa}>Inahitajika</span>}
+  </div>
+)
+
 const emptyMwandishi = () => ({ fname:'', mname:'', lname:'', dob:'', nid:'', jinsi:'', simu:'', barua_pepe:'', anwani:'', hali_ndoa:'', dini:'' })
 const emptyMali      = () => ({ ardhi:[] as KipachiArdhi[], benki:[] as KipachiBenki[], magari:[] as KipachiGari[], nyingine:'' })
 const emptyMsimamizi = () => ({ jina:'', uhusiano:'', simu:'', nida:'', mbadala_jina:'', mbadala_simu:'' })
@@ -83,19 +91,10 @@ export default function FormuPage() {
   function updMt(k: keyof typeof matakwa, val: string)   { setMatakwa(p => ({...p, [k]: val})) }
   function updSh(k: keyof typeof mashahidi, val: string) { setMashahidi(p => ({...p, [k]: val})) }
 
-  // Mali helpers
   function updArdhi(i: number, k: keyof KipachiArdhi, val: string) { setMali(p => { const a = [...p.ardhi]; a[i] = {...a[i], [k]: val}; return {...p, ardhi: a} }) }
   function updBenki(i: number, k: keyof KipachiBenki, val: string) { setMali(p => { const a = [...p.benki]; a[i] = {...a[i], [k]: val}; return {...p, benki: a} }) }
   function updGari (i: number, k: keyof KipachiGari,  val: string) { setMali(p => { const a = [...p.magari]; a[i] = {...a[i], [k]: val}; return {...p, magari: a} }) }
   function updW    (i: number, k: keyof Mrithi,        val: string) { setWateule(p => { const a = [...p]; a[i] = {...a[i], [k]: val}; return a }) }
-
-  const F = ({ id, label, req, error, children }: { id?: string, label: string, req?: boolean, error?: boolean, children: React.ReactNode }) => (
-    <div className={`${styles.uga} ${error ? styles.ugaKosa : ''}`}>
-      <label className={styles.lebo}>{label}{req && <span className={styles.lazima}> *</span>}</label>
-      {children}
-      {error && <span className={styles.ujumbeKosa}>Inahitajika</span>}
-    </div>
-  )
 
   const inp = (val: string, onChange: (v:string)=>void, placeholder='', type='text') => (
     <input className={styles.ingizo} type={type} value={val} onChange={e=>onChange(e.target.value)} placeholder={placeholder} />
