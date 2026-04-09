@@ -1,0 +1,111 @@
+.ukurasa { min-height: 100vh; background: var(--cream); }
+
+.nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 1.5rem; border-bottom: 1px solid var(--border);
+  background: var(--cream); position: sticky; top: 0; z-index: 100;
+}
+.navLogo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--rust); text-decoration: none; }
+.navHatua { font-size: 0.78rem; color: var(--mid); }
+
+.mwambao { background: var(--white); border-bottom: 1px solid var(--border); padding: 0.8rem 1.5rem; }
+.hatuaSafu { display: flex; overflow-x: auto; }
+.hatuaLebo {
+  flex: 1; text-align: center; font-size: 0.65rem; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 0.5rem 0.3rem; color: #b0a080;
+  border-bottom: 2px solid transparent; white-space: nowrap; transition: all 0.3s;
+}
+.hatuaLebo.sasa { color: var(--rust); border-bottom-color: var(--rust); font-weight: 600; }
+.hatuaLebo.imekamilika { color: var(--gold); border-bottom-color: var(--gold); }
+.asilimia { font-size: 0.7rem; color: var(--mid); margin-top: 0.4rem; }
+
+.kisanduku { max-width: 820px; margin: 2rem auto; padding: 0 1.5rem 5rem; }
+
+.sehemuKichwa { margin-bottom: 2rem; }
+.sehemuNamba { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 700; color: var(--border); line-height: 1; }
+.sehemuJina { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--ink); margin-top: -0.5rem; }
+.sehemuMaelezo { font-size: 0.85rem; color: var(--mid); margin-top: 0.4rem; line-height: 1.6; }
+
+.gridi { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem 1.5rem; margin-bottom: 1rem; }
+.gridiTatu { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem 1.5rem; margin-bottom: 1rem; }
+.gridiMoja { display: grid; grid-template-columns: 1fr; gap: 1.2rem; margin-bottom: 1rem; }
+.kamili { grid-column: 1 / -1; }
+
+.uga { display: flex; flex-direction: column; gap: 0.3rem; }
+.ugaKosa .ingizo { border-color: var(--nyekundu) !important; }
+.lebo { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); font-weight: 500; }
+.lazima { color: var(--rust); }
+.ujumbeKosa { font-size: 0.7rem; color: var(--nyekundu); }
+.kidokezo { font-size: 0.7rem; color: #9a8060; line-height: 1.4; }
+
+.ingizo {
+  border: 1px solid var(--border); background: white; padding: 0.6rem 0.8rem;
+  font-size: 0.9rem; color: var(--ink); outline: none; width: 100%;
+  transition: border-color 0.2s; border-radius: 4px;
+}
+.ingizo:focus { border-color: var(--gold); }
+.eneo { min-height: 90px; resize: vertical; }
+
+.kundiChaguo { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.3rem; }
+.kipachiChaguo { display: flex; align-items: center; gap: 0.4rem; cursor: pointer; font-size: 0.88rem; }
+
+.kikapu { margin-bottom: 1.8rem; }
+.kikapuKichwa { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--rust); margin-bottom: 0.8rem; }
+
+.kadiKipande {
+  border: 1px solid var(--border); background: white; padding: 1.2rem 1.4rem;
+  margin-bottom: 1rem; position: relative; border-radius: 6px;
+}
+.kadiKichwa { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--rust); margin-bottom: 0.8rem; }
+.btnOndoa {
+  position: absolute; top: 0.7rem; right: 0.8rem;
+  background: transparent; border: none; color: #c0a080; font-size: 1rem; cursor: pointer;
+}
+.btnOndoa:hover { color: var(--nyekundu); }
+.btnOngeza {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  border: 1px dashed var(--gold); background: transparent; color: var(--gold);
+  padding: 0.5rem 1.2rem; font-size: 0.82rem; cursor: pointer; border-radius: 4px;
+  transition: all 0.2s;
+}
+.btnOngeza:hover { background: #fdf5dc; }
+
+.sandukuHabari {
+  padding: 1rem 1.2rem; border-left: 3px solid var(--gold);
+  background: #fdf8f0; margin: 1.2rem 0; font-size: 0.8rem;
+  color: var(--mid); line-height: 1.7; border-radius: 0 4px 4px 0;
+}
+.sandukuHabari strong { color: var(--rust); }
+
+.vitufeNav {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+}
+.btnRudi {
+  border: 1px solid var(--border); background: transparent; color: var(--mid);
+  padding: 0.75rem 1.8rem; font-size: 0.85rem; border-radius: 4px; transition: all 0.2s;
+}
+.btnRudi:hover { border-color: var(--mid); }
+.btnEndelea {
+  background: var(--rust); color: white; border: none;
+  padding: 0.75rem 2rem; font-size: 0.85rem; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase; border-radius: 4px; transition: background 0.2s;
+}
+.btnEndelea:hover { background: var(--rust-dk); }
+.btnTuma {
+  background: var(--kijani); color: white; border: none;
+  padding: 0.75rem 2.2rem; font-size: 0.85rem; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase; border-radius: 4px; transition: background 0.2s;
+}
+.btnTuma:hover:not(:disabled) { background: #0f3d1f; }
+.btnTuma:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.muhtasari { border: 1px solid var(--border); background: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 6px; font-size: 0.88rem; line-height: 1.9; }
+.muhtasariKichwa { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--rust); margin-bottom: 1rem; }
+.mstariMuhtasari { border: none; border-top: 1px solid var(--border); margin: 0.8rem 0; }
+
+@media (max-width: 600px) {
+  .gridi, .gridiTatu { grid-template-columns: 1fr; }
+  .kisanduku { padding: 0 1rem 4rem; }
+  .nav { padding: 1rem; }
+}
