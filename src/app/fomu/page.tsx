@@ -272,7 +272,7 @@ export default function FormuPage() {
             <button className={styles.btnOngeza} onClick={()=>setWateule(p=>[...p,emptyMrithi()])}>+ Ongeza Mrithi</button>
             <div className={styles.sandukuHabari} style={{marginTop:'1.5rem'}}>
               <strong>Mambo Muhimu ya Kisheria:</strong><br/>
-              · <strong>Watoto wadogo</strong> (chini ya miaka 18) hawanaweza kupokea mali moja kwa moja — mdhamini atashikilia mali mpaka wafikia utu uzima.<br/>
+              · <strong>Watoto wadogo</strong> (chini ya miaka 18) hawataweza kupokea mali moja kwa moja — mdhamini atashikilia mali mpaka wafikia utu uzima.<br/>
               · <strong>Watoto wote</strong>, ikiwa ni pamoja na wale waliozaliwa nje ya ndoa, wana haki ya kurithi.<br/>
               · <strong>Wajane:</strong> Sheria ya kimila mara nyingi haimpi mjane haki ya moja kwa moja ya kurithi mali. Wosia wa maandishi unakupa uwezo wa kulinda mkeo/mumewe dhidi ya hili.
             </div>
