@@ -99,6 +99,10 @@ export default function FormuPage() {
   const inp = (val: string, onChange: (v:string)=>void, placeholder='', type='text') => (
     <input className={styles.ingizo} type={type} value={val} onChange={e=>onChange(e.target.value)} placeholder={placeholder} />
   )
+  const numFmt = (raw: string) => { const d = raw.replace(/[^\d]/g,''); return d ? Number(d).toLocaleString('en-US') : '' }
+  const moneyInp = (val: string, onChange: (v:string)=>void, placeholder='0') => (
+    <input className={styles.ingizo} type="text" inputMode="numeric" value={val} onChange={e=>onChange(numFmt(e.target.value))} placeholder={placeholder} />
+  )
   const sel = (val: string, onChange: (v:string)=>void, opts: [string,string][]) => (
     <select className={styles.ingizo} value={val} onChange={e=>onChange(e.target.value)}>
       {opts.map(([v,l])=><option key={v} value={v}>{l}</option>)}
@@ -191,7 +195,7 @@ export default function FormuPage() {
                     <F label="Aina ya Mali">{sel(p['aina-ardhi'],v=>updArdhi(i,'aina-ardhi',v),[['nyumba','Nyumba'],['ardhi','Ardhi'],['ghorofa','Ghorofa / Flat'],['shamba','Shamba']])}</F>
                     <F label="Namba ya Hati / Kiwanja">{inp(p['hati-ardhi'],v=>updArdhi(i,'hati-ardhi',v),'LO/DSM/XXX')}</F>
                     <F label="Mahali / Anwani"><div className={styles.kamili}>{inp(p['mahali-ardhi'],v=>updArdhi(i,'mahali-ardhi',v))}</div></F>
-                    <F label="Thamani (TZS) — Tahmini">{inp(p['thamani-ardhi'],v=>updArdhi(i,'thamani-ardhi',v),'0','number')}</F>
+                    <F label="Thamani (TZS) — Tahmini">{moneyInp(p['thamani-ardhi'],v=>updArdhi(i,'thamani-ardhi',v))}</F>
                     <F label="Atakayepata">{inp(p['mrithi-ardhi'],v=>updArdhi(i,'mrithi-ardhi',v),'Jina la mrithi')}</F>
                   </div>
                 </div>
